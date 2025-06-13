@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>A Chama Não Pode Apagar - Conferência de Jovens</title>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
+  /* Ajuste global para box-sizing */
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+
+  h1 {
+    color: #ffcc00;
+    text-shadow:
+      0 0 25px #fff,
+      0 0 10px #fff,
+      0 0 20px #ff9900,
+      0 0 30px #ff6600,
+      0 0 40px #ff3300,
+      0 0 50px #cc0000,
+      0 0 60px #990000;
+    animation: flames 1s infinite alternate;
+    font-family: 'Poppins', sans-serif;
+  }
+
+  @keyframes flames {
+    0% {
+      text-shadow:
+        0 0 5px #fff,
+        0 0 10px #fff,
+        0 0 20px #ff9900,
+        0 0 30px #ff6600,
+        0 0 40px #ff3300,
+        0 0 50px #cc0000,
+        0 0 60px #990000;
+    }
+    100% {
+      text-shadow:
+        0 0 10px #fff,
+        0 0 5px #fff,
+        0 0 30px #ffcc00,
+        0 0 40px #ff9900,
+        0 0 50px #ff6600,
+        0 0 60px #cc3300,
+        0 0 70px #990000;
+    }
+  }
+
+  body, html {
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(to top, #1a2a6c, #0a437a 60%, #ffcc00 95%);
+    color: #fff;
+    background-image: url('imagem/fundo.gif');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  header {
+    position: relative; 
+    z-index: 10;
+    background: rgba(0, 0, 0, 0.24);
+    padding: 40px 10px;
+    text-align: center;
+    box-shadow: 0 0px 15px rgba(0,0,0,0.5);
+  }
+
+  header h1 {
+    margin: 0;
+    font-weight: 700;
+    font-size: 3rem;
+    color: #ffcc00;
+    text-shadow: 2px 2px 6px rgba(0,0,0,0.7);
+  }
+
+  header p {
+    font-size: 1.5rem;
+    margin-top: 10px;
+    color: #d4b800;
+    text-shadow: 1px 1px 4px rgba(0,0,0,0.6);
+  }
+
+  nav {
+    display: none; /* esconder o nav tradicional para dar espaço ao menu flutuante */
+  }
+
+  main {
+    padding: 10px 20px;
+    max-width: 600px;
+    margin: auto;
+    position: relative; 
+    z-index: 10;
+    background: rgba(10, 67, 122, 0.75);
+    border-radius: 32px;
+    box-shadow: 0 0 20px rgba(255,204,0,0.7);
+
+    /* Quebra de palavras longas para evitar overflow */
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+
+  section {
+    margin-bottom: 10px;
+  }
+
+  h2 {
+    color: #ffcc00;
+    border-bottom: 2px solid #ffcc00;
+    padding-bottom: 8px;
+    margin-bottom: 20px;
+  }
+
+  .info p {
+    font-size: 1.15rem;
+    line-height: 1.5;
+  }
+
+  /* Menu flutuante lateral */
+  .menu-flutuante {
+    position: fixed;
+    top: 50%;
+    right: 15px;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    z-index: 999;
+    max-width: 90vw; /* Evitar ultrapassar a largura da viewport */
+    overflow-x: auto; /* Permitir scroll horizontal se precisar */
+  }
+
+  .menu-flutuante a {
+    background-color: rgba(10, 67, 122, 0.95);
+    color: #fff;
+    padding: 8px 16px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    box-shadow: 0 0 8px rgba(255, 204, 0, 0.7);
+    transition: all 0.3s ease;
+    white-space: nowrap; /* Evita quebra no texto do link */
+  }
+
+  .menu-flutuante a:hover {
+    background-color: #ffcc00;
+    color: #0a437a;
+    box-shadow: 0 0 16px #ffcc00;
+  }
+
+  /* Responsivo para menu flutuante */
+  @media(max-width: 600px) {
+    .menu-flutuante {
+      top: auto;
+      bottom: 20px;
+      right: 15px;
+      transform: none;
+      gap: 10px;
+      flex-direction: row;
+    }
+
+    .menu-flutuante a {
+      padding: 7px 14px;
+      font-size: 0.8rem;
+    }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <p>Conferência de Jovens </p>
+  <h1>A Chama Não Pode Apagar</h1>
+  <p>| 26/07 | 16h às 22h |</p>
+</header>
+
+<!-- Menu flutuante lateral -->
+<div class="menu-flutuante">
+<a href="index.html">Home</a>
+    <a href="inscricao.html">Inscrição</a>
+    <a href="camisa.html">Camisa</a>
+    <a href="programacao.html">Programação</a>
+    <a href="contato.html">Contato</a>
+    <a href="sobre.html">Sobre</a>
+<a href="https://maps.app.goo.gl/xoR7qmSVmrnVEXVR6" target="_blank">📍 Localização</a></div>
+
+<main>
+  <section id="sobre">
+    <h2>Sobre o Evento</h2>
+    <div class="info">
+      <p>Uma conferência especialmente para jovens, um tempo de encontro com Deus, avivamento e transformação. Venha viver momentos incríveis de adoração e palavra!</p>
+    </div>
+  </section>
+
+  <section id="informacoes">
+    <h2>Sobre o Evento</h2>
+    <div class="info">
+      <p><strong>💧 Lembrete:</strong> Traga sua garrafinha de água para ajudar o meio ambiente e manter-se hidratado.</p>
+    </div>
+  </section>
+
+  <section id="contato">
+    <h2>Contato</h2>
+    <div class="info">
+      <p>📞 (65) 99999-9999</p>
+      <p>📧 email@evento.com</p>
+    </div>
+  </section>
+</main>
+
+</body>
+</html>

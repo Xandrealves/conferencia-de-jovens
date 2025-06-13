@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>A Chama Não Pode Apagar</title>
+
+<!-- Fonte -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap" rel="stylesheet" />
+
+<meta name="description" content="Conferência de Jovens - A Chama Não Pode Apagar, dia 26/07 no Jardim Umuarama." />
+
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body, html {
+    width: 100%;
+    height: 100%;
+    font-family: 'Poppins', sans-serif;
+    overflow: hidden;
+  }
+
+  body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('imagem/index.gif');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  z-index: -1;
+  filter: brightness(0.7);
+  pointer-events: none;
+}
+
+
+  .container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 5px;
+  }
+
+  h1 {
+    color: #191970;
+    font-size: 5rem;
+    text-shadow:
+      0 0 10px #fff,
+      0 0 20px #ff9900,
+      0 0 30px #ff6600,
+      0 0 40px #ff3300,
+      0 0 50px #cc0000,
+      0 0 60px #990000;
+    animation: flames 1.5s infinite alternate;
+  }
+
+  @keyframes flames {
+    50% {
+      text-shadow:
+        0 0 50px #fff,
+        0 0 15px #ffcc00,
+        0 0 25px #ff9900,
+        0 0 35px #ff6600,
+        0 0 45px #cc0000;
+    }
+    100% {
+      text-shadow:
+        0 0 10px #fff,
+        0 0 20px #ffcc00,
+        0 0 30px #ff9900,
+        0 0 40px #ff3300,
+        0 0 50px #990000;
+    }
+  }
+
+  p {
+    color: #fff;
+    font-size: 1.5rem;
+    margin-top: 20px;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.8);
+  }
+
+  .subinfo {
+    margin-top: -70px;
+    font-size: 2.2rem;
+    color: #ffcc00;
+    text-shadow: 1px 1px 6px rgba(0,0,0,0.7);
+  }
+
+  nav {
+    margin-top: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+  }
+
+  nav a {
+    color: #fff;
+    background-color: rgba(10, 67, 122, 0.8);
+    padding: 12px 24px;
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(255, 204, 0, 0.8);
+    transition: all 0.3s ease;
+  }
+
+  nav a:hover {
+    background-color: #ffcc00;
+    color: #0a437a;
+    box-shadow: 0 0 20px #ffcc00;
+  }
+
+  @media (max-width: 768px) {
+    h1 {
+      font-size: 2.3rem;
+    }
+    p {
+      font-size: 1.2rem;
+    }
+    nav a {
+      padding: 10px 20px;
+      font-size: 0.9rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    h1 {
+      font-size: 1.8rem;
+    }
+    p {
+      font-size: 1rem;
+    }
+    nav {
+      flex-direction: column;
+      gap: 10px;
+    }
+  }
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+<div class="subinfo">CONFERÊNCIA DE JOVENS</div>  
+<p>Dia 26/07 | Das 16h às 22h | Jardim Umuarama</p>
+<p></p>
+<h1>A Chama Não Pode Apagar</h1>
+  
+  
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="inscricao.html">Inscrição</a>
+    <a href="camisa.html">Camisa</a>
+    <a href="programacao.html">Programação</a>
+    <a href="contato.html">Contato</a>
+    <a href="sobre.html">Sobre</a>
+<a href="https://maps.app.goo.gl/xoR7qmSVmrnVEXVR6" target="_blank">📍 Localização</a>
+  </nav>
+</div>
+
+<audio controls autoplay loop>
+  <source src="audio/ofogoardera.mp3" type="audio/mpeg">
+  Seu navegador não suporta o elemento de áudio.
+</audio>
+
+</body>
+</html>
