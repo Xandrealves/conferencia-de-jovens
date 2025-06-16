@@ -173,6 +173,71 @@
       font-size: 0.8rem;
     }
   }
+
+.grade-programacao {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.evento {
+  background: rgba(255, 255, 255, 0.05);
+  border: 2px solid #ffcc00;
+  border-radius: 18px;
+  padding: 12px;
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  max-width: 160px;
+}
+
+.evento img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  transition: transform 0.3s ease;
+  box-shadow: 0 0 8px rgba(255,204,0,0.5);
+}
+
+.evento p {
+  margin-top: 10px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: #ffcc00;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.6);
+}
+
+.evento.zoom {
+  transform: scale(1.6);
+  z-index: 999;
+}
+
+.evento.zoom img {
+  transform: scale(2);
+  box-shadow: 0 0 25px #ffcc00;
+}
+
+/* Centraliza o card ao clicar */
+.evento-centralizado {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1.6);
+  transition: all 0.4s ease;
+  z-index: 1000;
+  background-color: rgba(10,67,122,0.95);
+  box-shadow: 0 0 25px #ffcc00;
+}
+
+/* Escurece os outros cards */
+.evento-desfocado {
+  filter: blur(2px) brightness(0.6);
+  pointer-events: none;
+  transition: filter 0.3s ease;
+}
+
 </style>
 </head>
 <body>
@@ -194,21 +259,110 @@
 <a href="https://maps.app.goo.gl/xoR7qmSVmrnVEXVR6" target="_blank">📍 Localização</a></div>
 
 <main>
-  <section id="programacao">
-    <h2>PROGRAMAÇÃO</h2>
-    <div class="info">
-      <p>A Anunciar</p>
-    </div>
-  </section>
 
-  <section id="informacoes">
-    <h2>Sobre o Evento</h2>
-    <div class="info">
-      <p><strong>Logo Logo </strong>Estara Disponivel</p>
-    </div>
-  </section>
+<section id="programacao">
+  <h2>Programação</h2>
+  <div class="grade-programacao">
 
-</main>
+  <div class="evento">
+    <img src="imagem/IBNVA Shekina.jpg" alt="Louvor" />
+    <p>16h - Abertura / Louvor</p>
+  </div>
+
+  <div class="evento">
+    <img src="imagem/danca.jpg" alt="Apresentação de Dança" />
+    <p>17h - Apresentação de Dança</p>
+  </div>
+
+  <div class="evento">
+    <img src="imagem/ministracao1.jpg" alt="Ministração" />
+    <p>17h10 - Ministração</p>
+  </div>
+
+  <div class="evento">
+    <img src="imagem/louvor2.jpg" alt="Louvor" />
+    <p>18h - Louvor</p>
+  </div>
+
+  <div class="evento">
+    <img src="imagem/teatro.jpg" alt="Teatro" />
+    <p>18h30 - Apresentação de Teatro</p>
+  </div>
+
+  <div class="evento">
+    <img src="imagem/oferta.jpg" alt="Oferta" />
+    <p>18h45 - Momento de Oferta</p>
+  </div>
+
+  <div class="evento">
+    <img src="imagem/jantinha.jpg" alt="Jantar" />
+    <p>19h - Jantinha (espetinho)</p>
+  </div>
+
+  <div class="evento">
+    <img src="imagem/louvor3.jpg" alt="Louvor" />
+    <p>19h30 - Louvor</p>
+  </div>
+
+  <div class="evento">
+    <img src="imagem/ministracao2.jpg" alt="Ministração" />
+    <p>20h30 - Ministração</p>
+  </div>
+
+  <div class="evento">
+    <img src="imagem/louvor4.jpg" alt="Louvor" />
+    <p>21h30 - Louvor</p>
+  </div>
+
+  <div class="evento">
+    <img src="imagem/ministracao-final.jpg" alt="Ministração Final" />
+    <p>22h - Ministração Final</p>
+  </div>
+
+</div>
+
+<script>
+  const eventos = document.querySelectorAll('.evento');
+
+  eventos.forEach(evento => {
+    evento.addEventListener('click', (e) => {
+      e.stopPropagation(); // evita que o clique suba para o document e feche imediatamente
+
+      const isZoomed = evento.classList.contains('evento-centralizado');
+
+      // Remove classes de todos os eventos
+      eventos.forEach(e => {
+        e.classList.remove('evento-centralizado', 'evento-desfocado');
+      });
+
+      // Se ainda não estava em zoom, aplica zoom nele e desfoca os outros
+      if (!isZoomed) {
+        evento.classList.add('evento-centralizado');
+        eventos.forEach(e => {
+          if (e !== evento) e.classList.add('evento-desfocado');
+        });
+      }
+    });
+  });
+
+  // Clicar em qualquer lugar da tela (fora do card) fecha o zoom
+  document.addEventListener('click', () => {
+    eventos.forEach(e => {
+      e.classList.remove('evento-centralizado', 'evento-desfocado');
+    });
+  });
+
+  // Fechar zoom ao apertar ESC
+  window.addEventListener('keydown', (e) => {
+    if (e.key === "Escape") {
+      eventos.forEach(e => {
+        e.classList.remove('evento-centralizado', 'evento-desfocado');
+      });
+    }
+  });
+</script>
+
+
 
 </body>
 </html>
