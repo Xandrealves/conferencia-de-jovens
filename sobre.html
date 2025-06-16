@@ -8,12 +8,37 @@
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
 
-  /* Ajuste global para box-sizing */
   *, *::before, *::after {
     box-sizing: border-box;
   }
 
-  h1 {
+  body, html {
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(to top, #1a2a6c, #0a437a 60%, #ffcc00 95%);
+    color: #fff;
+    background-image: url('imagem/fundo.gif');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  header {
+    position: relative;
+    z-index: 10;
+    background: rgba(0, 0, 0, 0.24);
+    padding: 40px 10px;
+    text-align: center;
+    box-shadow: 0 0px 15px rgba(0,0,0,0.5);
+  }
+
+  header h1 {
+    margin: 0;
+    font-weight: 700;
+    font-size: 3rem;
     color: #ffcc00;
     text-shadow:
       0 0 25px #fff,
@@ -24,7 +49,6 @@
       0 0 50px #cc0000,
       0 0 60px #990000;
     animation: flames 1s infinite alternate;
-    font-family: 'Poppins', sans-serif;
   }
 
   @keyframes flames {
@@ -50,37 +74,6 @@
     }
   }
 
-  body, html {
-    overflow-x: hidden;
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    font-family: 'Poppins', sans-serif;
-    background: linear-gradient(to top, #1a2a6c, #0a437a 60%, #ffcc00 95%);
-    color: #fff;
-    background-image: url('imagem/fundo.gif');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-  }
-
-  header {
-    position: relative; 
-    z-index: 10;
-    background: rgba(0, 0, 0, 0.24);
-    padding: 40px 10px;
-    text-align: center;
-    box-shadow: 0 0px 15px rgba(0,0,0,0.5);
-  }
-
-  header h1 {
-    margin: 0;
-    font-weight: 700;
-    font-size: 3rem;
-    color: #ffcc00;
-    text-shadow: 2px 2px 6px rgba(0,0,0,0.7);
-  }
-
   header p {
     font-size: 1.5rem;
     margin-top: 10px;
@@ -89,26 +82,24 @@
   }
 
   nav {
-    display: none; /* esconder o nav tradicional para dar espaço ao menu flutuante */
+    display: none;
   }
 
   main {
     padding: 10px 20px;
     max-width: 600px;
     margin: auto;
-    position: relative; 
+    position: relative;
     z-index: 10;
-    background: rgba(10, 67, 122, 0.75);
+    background: rgba(10, 67, 122, 0.85);
     border-radius: 32px;
     box-shadow: 0 0 20px rgba(255,204,0,0.7);
-
-    /* Quebra de palavras longas para evitar overflow */
     word-wrap: break-word;
     overflow-wrap: break-word;
   }
 
   section {
-    margin-bottom: 10px;
+    margin-bottom: 20px;
   }
 
   h2 {
@@ -123,7 +114,6 @@
     line-height: 1.5;
   }
 
-  /* Menu flutuante lateral */
   .menu-flutuante {
     position: fixed;
     top: 50%;
@@ -133,8 +123,8 @@
     flex-direction: column;
     gap: 12px;
     z-index: 999;
-    max-width: 90vw; /* Evitar ultrapassar a largura da viewport */
-    overflow-x: auto; /* Permitir scroll horizontal se precisar */
+    max-width: 90vw;
+    overflow-x: auto;
   }
 
   .menu-flutuante a {
@@ -148,7 +138,7 @@
     text-transform: uppercase;
     box-shadow: 0 0 8px rgba(255, 204, 0, 0.7);
     transition: all 0.3s ease;
-    white-space: nowrap; /* Evita quebra no texto do link */
+    white-space: nowrap;
   }
 
   .menu-flutuante a:hover {
@@ -157,8 +147,35 @@
     box-shadow: 0 0 16px #ffcc00;
   }
 
-  /* Responsivo para menu flutuante */
+  .zap-float {
+    position: fixed;
+    bottom: 15px;
+    left: 15px;
+    background: #25D366;
+    color: white;
+    padding: 10px 18px;
+    border-radius: 50px;
+    font-weight: bold;
+    box-shadow: 0 0 10px #000;
+    z-index: 999;
+    font-size: 0.9rem;
+    text-decoration: none;
+  }
+
+  /* Responsivo */
   @media(max-width: 600px) {
+    header h1 {
+      font-size: 2rem;
+    }
+
+    header p {
+      font-size: 1rem;
+    }
+
+    main {
+      padding: 20px 12px;
+    }
+
     .menu-flutuante {
       top: auto;
       bottom: 20px;
@@ -169,8 +186,8 @@
     }
 
     .menu-flutuante a {
-      padding: 7px 14px;
-      font-size: 0.8rem;
+      padding: 10px 12px;
+      font-size: 0.9rem;
     }
   }
 </style>
@@ -178,37 +195,33 @@
 <body>
 
 <header>
-  <p>Conferência de Jovens </p>
+  <p>Conferência de Jovens</p>
   <h1>A Chama Não Pode Apagar</h1>
   <p>| 26/07 | 16h às 22h |</p>
 </header>
 
 <!-- Menu flutuante lateral -->
 <div class="menu-flutuante">
-<a href="index.html">Home</a>
-    <a href="inscricao.html">Inscrição</a>
-    <a href="camisa.html">Camisa</a>
-    <a href="programacao.html">Programação</a>
-    <a href="contato.html">Contato</a>
-    <a href="sobre.html">Sobre</a>
-<a href="https://maps.app.goo.gl/xoR7qmSVmrnVEXVR6" target="_blank">📍 Localização</a></div>
+  <a href="index.html">Home</a>
+  <a href="inscricao.html">Inscrição</a>
+  <a href="camisa.html">Camisa</a>
+  <a href="programacao.html">Programação</a>
+  <a href="contato.html">Contato</a>
+  <a href="sobre.html">Sobre</a>
+  <a href="https://maps.app.goo.gl/xoR7qmSVmrnVEXVR6" target="_blank">📍 Localização</a>
+</div>
+
+<!-- Botão WhatsApp flutuante -->
+<a href="https://wa.me/559999999999" target="_blank" class="zap-float">📲 Fale conosco</a>
 
 <main>
   <section id="sobre">
     <h2>Sobre o Evento</h2>
     <div class="info">
       <p>Uma conferência especialmente para jovens, um tempo de encontro com Deus, avivamento e transformação. Venha viver momentos incríveis de adoração e palavra!</p>
-    </div>
-  </section>
-
-  <section id="informacoes">
-    <h2>Sobre o Evento</h2>
-    <div class="info">
       <p><strong>💧 Lembrete:</strong> Traga sua garrafinha de água para ajudar o meio ambiente e manter-se hidratado.</p>
     </div>
   </section>
-
-  
 </main>
 
 </body>
