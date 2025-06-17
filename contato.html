@@ -2,14 +2,10 @@
 <html lang="pt-br">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="theme-color" content="#0a437a" />
-  <title>A Chama Não Pode Apagar</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>A Chama Não Pode Apagar - Conferência de Jovens</title>
 
-  <!-- Fonte -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap" rel="stylesheet" />
-
-  <meta name="description" content="Conferência de Jovens - A Chama Não Pode Apagar, dia 26/07 no Jardim Umuarama." />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
 
   <style>
     * {
@@ -19,105 +15,37 @@
     }
 
     body, html {
-      margin: 0;
-      padding: 0;
       height: 100%;
-      overflow-x: hidden;
       font-family: 'Poppins', sans-serif;
       background: linear-gradient(to top, #1a2a6c, #0a437a 60%, #ffcc00 95%);
       background-image: url('imagem/fundo.gif');
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
-      background-attachment: fixed;
       color: #fff;
-    }
-
-    body::before {
-      content: '';
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background-image: url('imagem/index.gif');
-      background-repeat: no-repeat;
-      background-position: center center;
-      background-size: cover;
-      z-index: -1;
-      filter: brightness(0.7);
-      pointer-events: none;
-    }
-
-    .container {
-      width: 100%;
-      max-width: 1200px;
-      margin: 0 auto;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      padding: 5px;
-    }
-
-    h1 {
-      color: #191970;
-      font-size: 5rem;
-      text-shadow:
-        0 0 10px #fff,
-        0 0 20px #ff9900,
-        0 0 30px #ff6600,
-        0 0 40px #ff3300,
-        0 0 50px #cc0000,
-        0 0 60px #990000;
-      animation: flames 1.5s infinite alternate;
-    }
-
-    @keyframes flames {
-      0% {
-        text-shadow:
-          0 0 10px #fff,
-          0 0 20px #ff9900,
-          0 0 30px #ff6600,
-          0 0 40px #ff3300,
-          0 0 50px #cc0000,
-          0 0 60px #990000;
-      }
-
-      100% {
-        text-shadow:
-          0 0 50px #fff,
-          0 0 15px #ffcc00,
-          0 0 25px #ff9900,
-          0 0 35px #ff6600,
-          0 0 45px #cc0000;
-      }
-    }
-
-    p {
-      color: #fff;
-      font-size: 1.5rem;
-      margin-top: 20px;
-      text-shadow: 2px 2px 8px rgba(0,0,0,0.8);
     }
 
     header {
       background: rgba(0, 0, 0, 0.24);
-      padding: 9px 10px;
+      padding: 10px 5px;
       text-align: center;
-      box-shadow: 0 0px 15px rgba(0,0,0,0.5);
-      position: relative;
-      z-index: 5;
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+    }
+
+    header h1 {
+      color: #ffcc00;
+      font-size: 3rem;
+      text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
+      animation: flames 1s infinite alternate;
     }
 
     header p {
-      font-size: clamp(1rem, 2.5vw, 1.5rem);
-      margin-top: 25px;
-      color: #ffffff;
-      text-shadow: 1px 1px 4px rgba(0,0,0,0.6);
+      font-size: 1.5rem;
+      color: #d4b800;
+      text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
     }
+
+
 
     nav {
       display: none;
